@@ -1,4 +1,4 @@
-function CardList({ robots }) {
+export default function CardList({ robots }) {
   return (
     <div className="bots-container">
       {robots.map((robot) => (
@@ -11,5 +11,3 @@ function CardList({ robots }) {
     </div>
   );
 }
-
-export default CardList;
