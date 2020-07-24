@@ -3,7 +3,6 @@ import _fetch from "isomorphic-fetch";
 import Header from "./components/Header";
 import CardList from "./components/CardList";
 import Head from "next/head";
-import offlineRobots from "../public/robots";
 
 export default function Index({ robotsData }) {
   const [searchField, setsearchField] = useState("");
@@ -45,7 +44,28 @@ export async function getServerSideProps() {
   } catch (err) {
     return {
       props: {
-        robotsData: offlineRobots,
+        robotsData: [
+          {
+            id: 1,
+            name: "One",
+            email: "something",
+          },
+          {
+            id: 2,
+            name: "Two",
+            email: "something",
+          },
+          {
+            id: 3,
+            name: "Three",
+            email: "something",
+          },
+          {
+            id: 4,
+            name: "Four",
+            email: "something",
+          },
+        ],
       },
     };
   }
