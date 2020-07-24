@@ -1,0 +1,39 @@
+.bots-container {
+  padding: 0 2rem;
+  .bot-card {
+    display: inline-block;
+    background-color: aliceblue;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 7px;
+    width: 15rem;
+    height: 19rem;
+    transition: transform 100ms ease;
+    cursor: pointer;
+    position: relative;
+    animation: float infinite alternate ease 0.3s;
+
+    @keyframes float {
+      from {
+        top: 0;
+      }
+      to {
+        top: 10px;
+      }
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+
+    h2,
+    p {
+      margin: 1rem 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

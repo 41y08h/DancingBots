@@ -1,0 +1,7 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  &-thumb {
+    background: darken($color: $primary-color, $amount: 5);
+  }
+}
