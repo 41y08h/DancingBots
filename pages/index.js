@@ -12,9 +12,9 @@ export default function Index({ robotsData }) {
   }
 
   const filterRobots = () => {
-    return robotsData.filter((robot) => {
-      return robot.name.toUpperCase().includes(searchField.toUpperCase());
-    });
+    return robotsData.filter((robot) =>
+      robot.name.toUpperCase().includes(searchField.toUpperCase())
+    );
   };
 
   return (
