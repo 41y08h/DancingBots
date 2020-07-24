@@ -4,27 +4,28 @@ import Header from "./components/Header";
 import CardList from "./components/CardList";
 
 export default function Index({ robotsData }) {
-  const [robots, setrobots] = useState(robotsData);
-
-  let filteredRobots = robots;
+  const [robots] = useState(robotsData);
+  const [searchField, setsearchField] = useState("");
 
   function onSearch(value) {
-    filteredRobots = robotsData.filter((robot) => {
-      return robot.name.toUpperCase().includes(value.toUpperCase());
-    });
-
-    setrobots(filteredRobots);
+    setsearchField(value);
   }
+
+  const filterRobots = () => {
+    return robots.filter((robot) => {
+      return robot.name.toUpperCase().includes(searchField.toUpperCase());
+    });
+  };
 
   return (
     <Fragment>
       <Header onSearch={onSearch} />
-      <CardList robots={robots} />
+      <CardList robots={filterRobots()} />
     </Fragment>
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   try {
     const res = await _fetch("https://jsonplaceholder.typicode.com/users");
     const robotsData = await res.json();
