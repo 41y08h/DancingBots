@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import _fetch from "isomorphic-fetch";
 import Header from "./components/Header";
 import CardList from "./components/CardList";
+import Head from "next/head";
 
 export default function Index({ robotsData }) {
   const [searchField, setsearchField] = useState("");
@@ -18,6 +19,17 @@ export default function Index({ robotsData }) {
 
   return (
     <Fragment>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Dancing Bots </title>
+        <meta
+          name="description"
+          content="Dance with bots. NextJS everywhere :D"
+        ></meta>
+      </Head>
       <Header onSearch={onSearch} />
       <CardList robots={filterRobots()} />
     </Fragment>
