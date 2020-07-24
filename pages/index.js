@@ -42,7 +42,6 @@ export async function getServerSideProps() {
     const robotsData = await res.json();
     return { props: { robotsData } };
   } catch (err) {
-    console.log(err);
     return {
       props: {
         robotsData: [
