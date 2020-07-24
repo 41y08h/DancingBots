@@ -1,3 +1,5 @@
+import App from "next/app";
+
 export default function CardList({ robots }) {
   return (
     <div className="bots-container">
@@ -10,4 +12,11 @@ export default function CardList({ robots }) {
       ))}
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps(context);
+
+  return { ...appProps };
 }
