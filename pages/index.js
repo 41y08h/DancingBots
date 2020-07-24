@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import _fetch from "isomorphic-fetch";
 import Header from "./components/Header";
-import CardList from "./components/CardList";
+// import CardList from "./components/CardList";
 import Head from "next/head";
 
 export default function Index({ robotsData }) {
