@@ -5,7 +5,10 @@ export default function CardList({ robots }) {
     <div className="bots-container">
       {robots.map((robot) => (
         <div className="bot-card" key={robot.id}>
-          <img src={`https://robohash.org/${robot.id}?size=170x170`} />
+          <img
+            src={`https://robohash.org/${robot.id}?size=170x170`}
+            alt="robot"
+          />
           <h2>{robot.name}</h2>
           <p>{robot.email}</p>
         </div>

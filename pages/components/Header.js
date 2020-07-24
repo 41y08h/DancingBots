@@ -3,6 +3,7 @@ export default function Header({ onSearch }) {
     <header className="header">
       <h1>DANCINGBOTS</h1>
       <input
+        aria-label="Search Input"
         placeholder="Search Bots"
         type="search"
         spellCheck="false"
