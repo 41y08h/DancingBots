@@ -31,7 +31,7 @@ export default function Index({ robotsData }) {
         ></meta>
       </Head>
       <Header onSearch={onSearch} />
-      <CardList robots={filterRobots()} />
+      {/* <CardList robots={filterRobots()} /> */}
     </Fragment>
   );
 }
