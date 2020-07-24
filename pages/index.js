@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import CardList from "./components/CardList";
 
 export default function Index({ robotsData }) {
-  const [robots] = useState(robotsData);
   const [searchField, setsearchField] = useState("");
 
   function onSearch(value) {
@@ -12,7 +11,7 @@ export default function Index({ robotsData }) {
   }
 
   const filterRobots = () => {
-    return robots.filter((robot) => {
+    return robotsData.filter((robot) => {
       return robot.name.toUpperCase().includes(searchField.toUpperCase());
     });
   };
