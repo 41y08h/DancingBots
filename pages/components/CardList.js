@@ -1,4 +1,4 @@
-export default function CardList({ robots }) {
+export default function Header({ onSearch }) {
   return (
     <div className="bots-container">
       {robots.map((robot) => (
